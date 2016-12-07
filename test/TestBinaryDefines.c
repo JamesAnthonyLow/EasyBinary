@@ -1,15 +1,14 @@
 #include "unity.h"
-#include "HelloWorld.h"
+#include "BinaryDefines.h"
 
-void test_HelloWorld(void)
+void test_B_Macro_ConvertsFromBinary(void)
 {
-  TEST_ASSERT_EQUAL_STRING("Hello Worl", greeting);
-  TEST_ASSERT_EQUAL_STRING("Hello World!", greeting);
+  TEST_FAIL_MESSAGE("Test has not been implemented yet");
 }
 
 int main(void)
 {
   UNITY_BEGIN();
-  RUN_TEST(test_HelloWorld);
+  RUN_TEST(test_B_Macro_ConvertsFromBinary);
   return UNITY_END();
 }
