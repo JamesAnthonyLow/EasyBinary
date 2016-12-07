@@ -5,10 +5,14 @@
 #Program: $(RT_OBJ)
 #	$(LINK) -o $(ROOT_PATH)Program.out $(MYOBJ)
 
+BinaryDefines:
+	ruby $(SRC_PATH)/gen_binary_defines.rb $(WIDTH)
+
 $(OBJS_PATH)%.o: $(SRC_PATH)%.c
 	$(COMPILE) -o $@ $<
 
-.PHONY: clean
+.PRECIOUS: BinaryDefines.h
+.PHONY: clean BinaryDefines
 
 clean:
 	-rm $(OBJS_PATH)*.o $(ROOT_PATH)*.out
