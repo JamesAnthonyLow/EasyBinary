@@ -9,8 +9,9 @@ File.open("BinaryDefines.h", "w+") do |f|
   f.puts "#ifndef BINARY_DEFINES_H
 #define BINARY_DEFINES_H"
   f.print "\n"
-  f.print def_bin_macro(1)
-  f.print "\n"
+  for i in 1..2 do
+    f.print "#{def_bin_macro(i)}\n"
+  end
   f.print "#define B(binary) B_##binary
 
 #endif"
