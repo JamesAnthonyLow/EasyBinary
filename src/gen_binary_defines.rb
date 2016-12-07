@@ -1,10 +1,3 @@
-require 'pry'
-
-##def def_bin_macro(width, i=0)
-##  return "//Binary numbers of width #{width}\n" if i == 2**width
-##  "#define B_%0*d %d\n" % [width, i.to_s(2), i] + def_bin_macro(width, i+1)
-##end
-
 def def_bin_macro(width)
   str = "//Binary numbers of width #{width}\n"
   for i in (0...2**width) do
