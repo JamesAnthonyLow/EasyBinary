@@ -73,6 +73,7 @@ void test_B_Macro_ConvertsFromBinary(void)
   TEST_ASSERT_EQUAL_UINT16(29, B(11101));
   TEST_ASSERT_EQUAL_UINT16(30, B(11110));
   TEST_ASSERT_EQUAL_UINT16(31, B(11111));
+  //width of 5
 }
 
 int main(void)
