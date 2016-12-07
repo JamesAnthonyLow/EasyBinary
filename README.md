@@ -6,4 +6,3 @@ Many C compilers do not support a literal to declare binary numbers.  EasyBinary
 Usage:
 ```C
 B(1101); //Would be equivalent to the literal 13
-```
