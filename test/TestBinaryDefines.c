@@ -3,7 +3,7 @@
 
 void test_B_Macro_ConvertsFromBinary(void)
 {
-  TEST_FAIL_MESSAGE("Test has not been implemented yet");
+  TEST_ASSERT_EQUAL_HEX16(15, B(1111));
 }
 
 int main(void)
