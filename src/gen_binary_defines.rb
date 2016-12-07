@@ -1,14 +1,18 @@
+require 'pry'
 def def_bin_macro(width, n)
-  "#define B_%0*d %d" % [width, n.to_s(2), n]
+  "#define B_%0*d %d\n" % [width, n.to_s(2), n]
+end
+
+def def_macros_of_width(width, i=0)
+  return "" if i == 2**width
+  def_bin_macro(width, i) + def_macros_of_width(width, i+1)
 end
 
 File.open("BinaryDefines.h", "w+") do |f|
   f.puts "#ifndef BINARY_DEFINES_H
 #define BINARY_DEFINES_H"
   f.print "\n"
-  for i in 0..2**0 do
-    f.puts def_bin_macro(1, i)
-  end
+  f.print def_macros_of_width(1)
   f.print "\n"
   f.print "#define B(binary) B_##binary
 
